@@ -20,11 +20,13 @@
             <div class="border-end bg-white" id="sidebar-wrapper">
                 <div class="sidebar-heading border-bottom bg-light">Dashboard</div>
                 <div class="list-group list-group-flush">
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">My Workplace</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">My Teaching</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Behaviour</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Attendance</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Academics</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Student Information</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Users</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Settings</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Reports</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Profile</a>
                 </div>
             </div>
             <!-- Page content wrapper-->

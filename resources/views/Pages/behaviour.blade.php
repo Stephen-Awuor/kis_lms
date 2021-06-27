@@ -33,7 +33,7 @@
                 <!-- Page content-->
                 <div class="container-fluid">
                     <p>
-                       content
+                       Behavior
                     </p>
                 </div>
             </div>

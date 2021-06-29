@@ -24,77 +24,80 @@
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="teaching">My Teaching</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="behaviour">Behaviour</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="reports">Reports</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="profile">Profile</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="{!! url('/profile/{{$user->id}}'); !!}">Profile</a>
                 </div>
             </div>
             <!-- Page content wrapper-->
             <div id="page-content-wrapper">
                 <!-- Top navigation-->
                 <!-- Page content-->
+                <form action="/updateProfile/{id}" method="POST">
+                  @csrf
+                  {{method_field('PUT')}}
                 <div class="container-fluid">
                     <div class="form-row">
+                      <div class="form-group col-md-6">
+                        <label>First Name</label>
+                    <input type="text" class="form-control @error('fname') is-invalid @enderror" name="fname" value="{{$user->fname}}">
+                    @error('fname')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                     @enderror
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label>Last Name</label>
+                    <input type="text" class="form-control @error('lname') is-invalid @enderror" name="lname" value="{{$user->lname}}">
+                    @error('lname')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                     @enderror
+                      </div>
+                      </div><br>
+                      <div class="form-row">
                         <div class="form-group col-md-6">
-                          <label for="inputEmail4">First Name</label>
-                          <input type="text" class="form-control" @error('fname') is-invalid @enderror" value="{{$users->fname}}" name="fname">
-                          @error('fname')
-                        <span class="invalid-feedback" role="alert">
+                          <label>Salutation</label>
+                      <input type="text" class="form-control @error('salutation') is-invalid @enderror" name="salutation" value="{{$user->salutation}}">
+                      @error('salutation')
+                      <span class="invalid-feedback" role="alert">
                           <strong>{{ $message }}</strong>
-                         </span>
-                         @enderror
+                      </span>
+                       @enderror
                         </div>
                         <div class="form-group col-md-6">
-                          <label for="inputPassword4">Last Name</label>
-                          <input type="text" class="form-control" @error('lname') is-invalid @enderror" value="{{$users->lname}}" name="lname">
-                          @error('lname')
-                        <span class="invalid-feedback" role="alert">
+                          <label>Email</label>
+                      <input type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{$user->email}}">
+                      @error('email')
+                      <span class="invalid-feedback" role="alert">
                           <strong>{{ $message }}</strong>
-                         </span>
-                         @enderror
+                      </span>
+                       @enderror
                         </div>
                       </div><br>
                       <div class="form-row">
                         <div class="form-group col-md-6">
-                          <label for="inputEmail4">Salutation</label>
-                          <input type="text" class="form-control" @error('salutation') is-invalid @enderror" value="{{$users->salutation}}" name="salutation">
-                          @error('salutation')
-                        <span class="invalid-feedback" role="alert">
+                          <label>Phone Number</label>
+                      <input type="text" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{$user->phone}}">
+                      @error('phone')
+                      <span class="invalid-feedback" role="alert">
                           <strong>{{ $message }}</strong>
-                         </span>
-                         @enderror
+                      </span>
+                       @enderror
                         </div>
                         <div class="form-group col-md-6">
-                          <label for="inputPassword4">Eamil Address</label>
-                          <input type="email" class="form-control" @error('email') is-invalid @enderror" value="{{$users->email}}" name="email">
-                          @error('email')
-                        <span class="invalid-feedback" role="alert">
+                          <label>Password</label>
+                      <input type="text" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="New Password">
+                      @error('password')
+                      <span class="invalid-feedback" role="alert">
                           <strong>{{ $message }}</strong>
-                         </span>
-                         @enderror
-                        </div>
-                      </div><br>
-                      <div class="form-row">
-                        <div class="form-group col-md-6">
-                          <label for="inputEmail4">Phone</label>
-                          <input type="text" class="form-control" @error('phone') is-invalid @enderror" value="{{$users->phone}}" name="phone">
-                          @error('phone')
-                        <span class="invalid-feedback" role="alert">
-                          <strong>{{ $message }}</strong>
-                         </span>
-                         @enderror
-                        </div>
-                        <div class="form-group col-md-6">
-                          <label for="inputPassword4">Password</label>
-                          <input type="password" class="form-control" @error('password') is-invalid @enderror" value="{{$users->password}}" name="password">
-                          @error('password')
-                        <span class="invalid-feedback" role="alert">
-                          <strong>{{ $message }}</strong>
-                         </span>
-                         @enderror
+                      </span>
+                       @enderror
                         </div>
                       </div>
+                    </form>
                 </div>
             </div>
-        </div>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->

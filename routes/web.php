@@ -18,4 +18,4 @@ Route::get('/workplace', [App\Http\Controllers\HomeController::class, 'workplace
 Route::get('/teaching', [App\Http\Controllers\HomeController::class, 'teaching'])->name('teaching');
 Route::get('/behaviour', [App\Http\Controllers\HomeController::class, 'behaviour'])->name('behaviour');
 Route::get('/reports', [App\Http\Controllers\HomeController::class, 'reports'])->name('reports');
-Route::get('/profile', [App\Http\Controllers\HomeController::class, 'profile'])->name('profile');
+Route::get('/profile/{id}', [App\Http\Controllers\UserController::class, 'getProfile'])->name('profile');

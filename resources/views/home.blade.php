@@ -24,7 +24,7 @@
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="teaching">My Teaching</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="behaviour">Behaviour</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="reports">Reports</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="profile">Profile</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="{!! url('/profile/{{$user->id}}'); !!}">Profile</a>
                 </div>
             </div>
             <!-- Page content wrapper-->

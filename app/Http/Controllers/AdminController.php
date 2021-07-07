@@ -12,7 +12,7 @@ class AdminController extends Controller
         $this->middleware('auth');
     }
 
-    public function dashboard(){
+    public function admin_dashboard(){
         return view ('admin.admin_dashboard');
     }
     public function admin_teaching(){

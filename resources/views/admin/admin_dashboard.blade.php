@@ -29,37 +29,55 @@
       <div class="sidebar-wrapper" id="sidebar-wrapper">
         <ul class="nav">
           <li>
-            <li class="{{Request::is('workplace') ? 'active' : ''}}">
-            <a href="./workplace">
+            <li class="{{Request::is('admin_workplace') ? 'active' : ''}}">
+            <a href="./admin_workplace">
               <i class="now-ui-icons design_app"></i>
               <p class="text-info">My Workplace</p>
             </a>
           </li>
           <li>
-            <li class="{{Request::is('teaching') ? 'active' : ''}}">
-            <a href="./teaching">
+            <li class="{{Request::is('admin_teaching') ? 'active' : ''}}">
+            <a href="./admin_teaching">
               <i class="now-ui-icons location_map-big"></i>
               <p class="text-info">My Teaching</p>
             </a>
           </li>
           <li>
-            <li class="{{Request::is('behaviour') ? 'active' : ''}}">
-            <a href="./behaviour">
+            <li class="{{Request::is('admin_attendance') ? 'active' : ''}}">
+            <a href="./admin_attendance">
               <i class="now-ui-icons ui-1_bell-53"></i>
-              <p class="text-info">Behavior Management</p>
+              <p class="text-info">Attendance</p>
             </a>
           </li>
           <li>
-            <li class="{{Request::is('reports') ? 'active' : ''}}">
-            <a href="./reports">
+            <li class="{{Request::is('admin_academics') ? 'active' : ''}}">
+            <a href="./admin_academics">
               <i class="now-ui-icons design_bullet-list-67"></i>
-              <p class="text-info">Reports</p>
+              <p class="text-info">Academics</p>
             </a>
           </li>
-          <li class="{{Request::is('profile') ? 'active' : ''}}">
-            <a href="./profile/{id}">
+          <li class="{{Request::is('admin_students') ? 'active' : ''}}">
+            <a href="./admin_students">
               <i class="now-ui-icons users_single-02"></i>
-              <p class="text-info">My Profile</p>
+              <p class="text-info">Student Information</p>
+            </a>
+          </li>
+          <li class="{{Request::is('admin_users') ? 'active' : ''}}">
+            <a href="./admin_users">
+              <i class="now-ui-icons users_single-02"></i>
+              <p class="text-info">Users</p>
+            </a>
+          </li>
+          <li class="{{Request::is('admin_configs') ? 'active' : ''}}">
+            <a href="./admin_configs">
+              <i class="now-ui-icons users_single-02"></i>
+              <p class="text-info">Settings</p>
+            </a>
+          </li>
+          <li class="{{Request::is('admin_reports') ? 'active' : ''}}">
+            <a href="./admin_reports">
+              <i class="now-ui-icons users_single-02"></i>
+              <p class="text-info">Reports</p>
             </a>
           </li>
         </ul>
@@ -125,14 +143,9 @@
           <div class="col-md-12">
            <div class="card">
               <div class="card-header">
-               
-               <!-- Content Here -->
-
               </div>
               <div class="card-body">
-                <div class="table-responsive">
-                 
-                </div>
+                
               </div>
             </div>
           </div> 

@@ -18,4 +18,20 @@ class UserController extends Controller
         $user = auth()->user();
         return view('Pages.profile')->with('user', $user);
     }
+
+    public function ProfileUpdate(){
+        
+        $this->validate(request(), [
+           
+        ]);
+        $user = auth()->user();
+        $user->fname = request('fname');
+        $user->lname = request('lname');
+        $user->salutation = request('salutation');
+        $user->email = request('email');
+        $user->phone = request('phone');
+        $user->password = bcrypt(request('password'));
+        $user->save();
+        return redirect ('/home')->with('success', 'Changes Successfully Saved!');
+    }
 }

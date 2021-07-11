@@ -11,9 +11,11 @@ class AdminController extends Controller
     {
         $this->middleware('auth');
     }
-
     public function admin_dashboard(){
         return view ('admin.admin_dashboard');
+    }
+    public function admin_workplace(){
+        return view ('admin.admin_workplace');
     }
     public function admin_teaching(){
         return view ('admin.admin_teaching');

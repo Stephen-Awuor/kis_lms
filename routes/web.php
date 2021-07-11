@@ -11,6 +11,22 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::group(['middleware' => ['auth', 'admin']], function() {
+    Route::get('admin_dashboard', function() {
+        return view('admin.admin_dashboard');
+    });
+
+Route::get('/admin_dashboard', [App\Http\Controllers\AdminController::class, 'admin_dashboard']);
+Route::get('/admin_workplace', [App\Http\Controllers\AdminController::class, 'admin_workplace']);
+Route::get('/admin_teaching', [App\Http\Controllers\AdminController::class, 'admin_teaching']);
+Route::get('/admin_students', [App\Http\Controllers\AdminController::class, 'admin_students']);
+Route::get('/admin_configs', [App\Http\Controllers\AdminController::class, 'admin_configs']);
+Route::get('/admin_attendance', [App\Http\Controllers\AdminController::class, 'admin_attendance']);
+Route::get('/admin_academics', [App\Http\Controllers\AdminController::class, 'admin_academics']);
+Route::get('/admin_reports', [App\Http\Controllers\AdminController::class, 'admin_reports']);
+Route::get('/admin_users', [App\Http\Controllers\AdminController::class, 'admin_users']);
+});
+
 Route::get('/', [App\Http\Controllers\PagesController::class, 'index']);
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'home']);
@@ -20,14 +36,3 @@ Route::get('/behaviour', [App\Http\Controllers\HomeController::class, 'behaviour
 Route::get('/reports', [App\Http\Controllers\HomeController::class, 'reports']);
 Route::get('/profile/{id}', [App\Http\Controllers\UserController::class, 'getProfile']);
 Route::put('/updateProfile/{id}', [App\Http\Controllers\UserController::class, 'ProfileUpdate']);
-
-
-/*Admin Routes*/
-Route::get('/admin_dashboard', [App\Http\Controllers\AdminController::class, 'admin_dashboard']);
-Route::get('/admin_teaching', [App\Http\Controllers\AdminController::class, 'admin_teaching']);
-Route::get('/admin_students', [App\Http\Controllers\AdminController::class, 'admin_students']);
-Route::get('/admin_configs', [App\Http\Controllers\AdminController::class, 'admin_configs']);
-Route::get('/admin_attendance', [App\Http\Controllers\AdminController::class, 'admin_attendance']);
-Route::get('/admin_academics', [App\Http\Controllers\AdminController::class, 'admin_academics']);
-Route::get('/admin_reports', [App\Http\Controllers\AdminController::class, 'admin_reports']);
-Route::get('/admin_users', [App\Http\Controllers\AdminController::class, 'admin_users']);

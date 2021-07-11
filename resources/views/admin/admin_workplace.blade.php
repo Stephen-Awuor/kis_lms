@@ -14,7 +14,7 @@
   <link rel="icon" type="image/png" href="../assets/img/favicon.png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
-    Admin | Student Information
+    Admin | Workplace
   </title>
 
   <!-- CSS Files -->

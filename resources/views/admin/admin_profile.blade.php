@@ -151,7 +151,72 @@
               <div class="card-header">
               </div>
               <div class="card-body">
-                
+                <form action="/updateProfile/{id}" method="POST">
+                    @csrf
+                    {{method_field('PUT')}}
+                  <div class="container-fluid">
+                      <div class="form-row">
+                        <div class="form-group col-md-6">
+                          <label>First Name</label>
+                      <input type="text" class="form-control @error('fname') is-invalid @enderror" name="fname" value="{{$user->fname}}">
+                      @error('fname')
+                      <span class="invalid-feedback" role="alert">
+                          <strong>{{ $message }}</strong>
+                      </span>
+                       @enderror
+                        </div>
+                        <div class="form-group col-md-6">
+                          <label>Last Name</label>
+                      <input type="text" class="form-control @error('lname') is-invalid @enderror" name="lname" value="{{$user->lname}}">
+                      @error('lname')
+                      <span class="invalid-feedback" role="alert">
+                          <strong>{{ $message }}</strong>
+                      </span>
+                       @enderror
+                        </div>
+                        </div><br>
+                        <div class="form-row">
+                          <div class="form-group col-md-6">
+                            <label>Salutation</label>
+                        <input type="text" class="form-control @error('salutation') is-invalid @enderror" name="salutation" value="{{$user->salutation}}">
+                        @error('salutation')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                         @enderror
+                          </div>
+                          <div class="form-group col-md-6">
+                            <label>Email</label>
+                        <input type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{$user->email}}">
+                        @error('email')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                         @enderror
+                          </div>
+                        </div><br>
+                        <div class="form-row">
+                          <div class="form-group col-md-6">
+                            <label>Phone Number</label>
+                        <input type="text" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{$user->phone}}">
+                        @error('phone')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                         @enderror
+                          </div>
+                          <div class="form-group col-md-6">
+                            <label>Password</label>
+                        <input type="text" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="New Password">
+                        @error('password')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                         @enderror
+                          </div>
+                        </div>
+                        <button type="submit" class="btn btn-success">Save Changes</button>
+                      </form>
               </div>
             </div>
           </div> 

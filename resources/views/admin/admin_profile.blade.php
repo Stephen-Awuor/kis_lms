@@ -151,7 +151,7 @@
               <div class="card-header">
               </div>
               <div class="card-body">
-                <form action="/updateProfile/{id}" method="POST">
+                <form action="/Admin_Profile/{id}" method="POST">
                     @csrf
                     {{method_field('PUT')}}
                   <div class="container-fluid">
@@ -207,8 +207,26 @@
                           </div>
                           <div class="form-group col-md-6">
                             <label>Password</label>
-                        <input type="text" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="New Password">
+                        <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="Enter New Password">
                         @error('password')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                         @enderror
+                          </div>
+                          <div class="form-group col-md-6">
+                            <label>Usertype</label>
+                        <input type="text" class="form-control @error('usertype') is-invalid @enderror" name="usertype" value="{{$user->usertype}}">
+                        @error('usertype')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                         @enderror
+                          </div>
+                          <div class="form-group col-md-6">
+                            <label>Confirm Password</label>
+                        <input type="password" class="form-control @error('confirm_password') is-invalid @enderror" name="confirm_password" placeholder="Confirm New Password">
+                        @error('confirm_password')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>

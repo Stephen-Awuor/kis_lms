@@ -31,7 +31,7 @@ class UserController extends Controller
         $user->email = request('email');
         $user->phone = request('phone');
         $user->password = bcrypt(request('password'));
-        $user->save();
+        $user->update();
         return redirect ('/home')->with('success', 'Changes Successfully Saved!');
     }
 }

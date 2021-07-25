@@ -48,10 +48,10 @@ class AdminController extends Controller
         return view('admin.admin_profile')->with('user', $user);
     }
 
-    public function ProfileUpdate(){
-        
+    public function updateProfile(){
         $this->validate(request(), [
-           
+            'password'=>'required',
+            'confirm_password'=>'required'
         ]);
         $user = auth()->user();
         $user->fname = request('fname');
@@ -60,7 +60,9 @@ class AdminController extends Controller
         $user->email = request('email');
         $user->phone = request('phone');
         $user->password = bcrypt(request('password'));
+        $user->confirm_password = bcrypt(request('confirm_password'));
+        $user->usertype = request('usertype');
         $user->save();
-        return redirect('admin.admin_profile')->with('success', 'Changes Successfully Saved!');
+        return view ('admin.admin_dashboard')->with('success', 'Changes Successfully Saved!');
     }
 }

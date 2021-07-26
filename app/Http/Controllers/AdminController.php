@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\User;
+use App\Models\User;
 use App\DB;
 class AdminController extends Controller
 {
@@ -64,5 +64,40 @@ class AdminController extends Controller
         $user->usertype = request('usertype');
         $user->save();
         return view ('admin.admin_dashboard')->with('success', 'Changes Successfully Saved!');
+    }
+
+    public function users(){
+        $users = User::OrderBy('created_at', 'asc')->paginate(5); //fetches all users
+        return view('admin.admin_users')->with('users', $users);
+    }
+
+    public function new_user(){
+        return view ('admin.admin_new_user');
+    }
+
+    public function addUser(request $request){
+        $this->validate ($request, [
+            'fname' => ['required', 'string', 'max:255'],
+            'lname' => ['string', 'max:255'],
+            'usertype' => ['required'],
+            'phone' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+        ],[
+            'fname.required' => "The :value First Name is required.",
+            'email.unique' => "This email :attribute has already been taken.",
+            'fname.string' => "The First Name should be a string."
+        ]);
+        
+         $newuser=new User();
+         $newuser->fname=$request->input('fname');
+         $newuser->lname=$request->input('lname');
+         $newuser->usertype=$request->input('usertype');
+         $newuser->salutation=$request->input('salutation');
+         $newuser->email=$request->input('email');
+         $newuser->phone=$request->input('phone');
+         $newuser->password=bcrypt($request->input('password'));
+         $newuser->save(); 
+         return redirect ('/admin_users')->with('success', 'New User Successfully Added!');
     }
 }

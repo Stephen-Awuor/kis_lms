@@ -141,58 +141,100 @@
      <div class="content">
         <div class="row">
           <div class="col-md-12">
-            <div class="card">
+          <div class="card">
               <div class="card-header">
-                <h4 class="card-title"> Registered Users</h4><a href="{!! url('/new_user'); !!}" class="btn btn-info">New User</a>
+                <h4 class="card-title">New User</h4>
               </div>
               <div class="card-body">
-                <div class="table-responsive">
-                  <table class="table table-striped">
-                    <thead class=" text-secondary">
-                      <th>
-                        First Name
-                      </th>
-                      <th>
-                        Last Name
-                      </th>
-                      <th>
-                        Email Address
-                      </th>
-                      <th>
-                        Phone No.
-                      </th>
-                    </thead>
-                    <tbody>
-                      @foreach($users as $user)                    
-                      <tr>
-                        <td>
-                          {{$user->fname}}
-                        </td>
-                        <td>
-                          {{$user->lname}}
-                        </td>
-                        <td>
-                          {{$user->email}}
-                        </td>
-                        <td>
-                          {{$user->phone}}
-                        </td>
-                        <td class="text-right">
-                        <a href="/role-edit/{{ $user->id }}" class="btn btn-success">Edit</a>
-                        </td>
-                        <td class="text-right">
-                          <form action="/role-delete/{{ $user->id }}" method="POST">
-                            @csrf
-                            {{method_field('delete')}}
-                        <button type="submit" class="btn btn-danger">Delete</button>
-                          </form>
-                        </td>
-                      </tr>
-                      @endforeach
-                    </tbody>
-                  </table>
-                  {{$users->links()}}
-                </div>
+                <form action="/add-user" method="POST">
+                  @csrf
+                  {{method_field('PUT')}}
+                <div class="container-fluid">
+                    <div class="form-row">
+                      <div class="form-group col-md-6">
+                        <label>First Name</label>
+                    <input type="text" class="form-control @error('fname') is-invalid @enderror" name="fname" placeholder="Enter First Name">
+                    @error('fname')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                     @enderror
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label>Last Name</label>
+                    <input type="text" class="form-control @error('lname') is-invalid @enderror" name="lname" placeholder="Enter Last Name">
+                    @error('lname')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                     @enderror
+                      </div>
+                      </div><br>
+                      <div class="form-row">
+                        <div class="form-group col-md-6">
+                          <select id="salutation" type="text" class="form-control @error('salutation') is-invalid @enderror" name="salutation" value="{{ old('salutation') }}" required autocomplete="salutation" autofocus>
+                              <option>Mr.</option>
+                              <option>Mrs.</option>
+                            </select>
+                          @error('salutation')
+                              <span class="invalid-feedback" role="alert">
+                                  <strong>{{ $message }}</strong>
+                              </span>
+                          @enderror
+                      </div>
+                        <div class="form-group col-md-6">
+                          <label>Email</label>
+                      <input type="text" class="form-control @error('email') is-invalid @enderror" name="email" placeholder="Enter Email Address">
+                      @error('email')
+                      <span class="invalid-feedback" role="alert">
+                          <strong>{{ $message }}</strong>
+                      </span>
+                       @enderror
+                        </div>
+                      </div><br>
+                      <div class="form-row">
+                        <div class="form-group col-md-6">
+                          <label>Phone Number</label>
+                      <input type="text" class="form-control @error('phone') is-invalid @enderror" name="phone" placeholder="Enter Phone Number">
+                      @error('phone')
+                      <span class="invalid-feedback" role="alert">
+                          <strong>{{ $message }}</strong>
+                      </span>
+                       @enderror
+                        </div>
+                        <div class="form-group col-md-6">
+                          <label>Password</label>
+                      <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="Enter Password">
+                      @error('password')
+                      <span class="invalid-feedback" role="alert">
+                          <strong>{{ $message }}</strong>
+                      </span>
+                       @enderror
+                        </div>
+                        <div class="form-group col-md-6">
+                          <select id="usertype" type="text" class="form-control @error('usertype') is-invalid @enderror" name="usertype" value="{{ old('usertype') }}" required autocomplete="usertype" autofocus>
+                              <option>Admin</option>
+                              <option>User</option>
+                            </select>
+                          @error('salutation')
+                              <span class="invalid-feedback" role="alert">
+                                  <strong>{{ $message }}</strong>
+                              </span>
+                          @enderror
+                      </div>
+                        <div class="form-group col-md-6">
+                          <label>Confirm Password</label>
+                      <input type="password" class="form-control @error('confirm_password') is-invalid @enderror" name="confirm_password" placeholder="Confirm Password">
+                      @error('confirm_password')
+                      <span class="invalid-feedback" role="alert">
+                          <strong>{{ $message }}</strong>
+                      </span>
+                       @enderror
+                        </div>
+                      </div>
+                      <button type="submit" class="btn btn-success">ADD</button>
+                      <a href="/role-register" class="btn btn-danger">CANCEL</a>
+                    </form>
               </div>
             </div>
           </div> 

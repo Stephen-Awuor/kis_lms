@@ -24,9 +24,11 @@ Route::get('/admin_configs', [App\Http\Controllers\AdminController::class, 'admi
 Route::get('/admin_attendance', [App\Http\Controllers\AdminController::class, 'admin_attendance']);
 Route::get('/admin_academics', [App\Http\Controllers\AdminController::class, 'admin_academics']);
 Route::get('/admin_reports', [App\Http\Controllers\AdminController::class, 'admin_reports']);
-Route::get('/admin_users', [App\Http\Controllers\AdminController::class, 'admin_users']);
+Route::get('/admin_users', [App\Http\Controllers\AdminController::class, 'users']);
 Route::get('/admin_profile/{id}',[App\Http\Controllers\AdminController::class, 'getProfile']);
 Route::put('/Admin_Profile/{id}',[App\Http\Controllers\AdminController::class, 'updateProfile']);
+Route::get('/new_user',[App\Http\Controllers\AdminController::class, 'new_user']);
+Route::put('/add-user',[App\Http\Controllers\AdminController::class, 'addUser']);
 });
 
 Route::get('/', [App\Http\Controllers\PagesController::class, 'index']);

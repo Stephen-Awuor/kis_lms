@@ -29,6 +29,9 @@ Route::get('/admin_profile/{id}',[App\Http\Controllers\AdminController::class, '
 Route::put('/Admin_Profile/{id}',[App\Http\Controllers\AdminController::class, 'updateProfile']);
 Route::get('/new_user',[App\Http\Controllers\AdminController::class, 'new_user']);
 Route::put('/add-user',[App\Http\Controllers\AdminController::class, 'addUser']);
+Route::get('/adminU-edit/{id}',[App\Http\Controllers\AdminController::class, 'getUser']);
+Route::put('/adminU-Update/{id}',[App\Http\Controllers\AdminController::class, 'UpdateUser']);
+Route::delete('/user-delete/{id}',[App\Http\Controllers\AdminController::class, 'deleteUser']);
 });
 
 Route::get('/', [App\Http\Controllers\PagesController::class, 'index']);

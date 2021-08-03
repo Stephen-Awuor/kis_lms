@@ -100,4 +100,30 @@ class AdminController extends Controller
          $newuser->save(); 
          return redirect ('/admin_users')->with('success', 'New User Successfully Added!');
     }
+
+    public function getUser($id)
+    {    //0r Request $Reguest, $id
+         $users = User::FindorFail($id);
+         return view('admin.admin_edit_user')->with('users', $users);
+    }
+
+    public function UpdateUser(Request $request, $id)
+    {
+        $users=User::find($id);
+        $users->fname=$request->input('fname');
+         $users->lname=$request->input('lname');
+         $users->usertype=$request->input('usertype');
+         $users->salutation=$request->input('salutation');
+         $users->email=$request->input('email');
+         $users->phone=$request->input('phone');
+         $users->password=bcrypt($request->input('password'));
+         $users->update(); 
+        return redirect('/admin_users')->with('success', 'Changes Successfully Saved!');
+    }
+
+    public function deleteUser($id){
+        $users=User::FindorFail($id);
+        $users->delete();
+        return redirect('/admin_users')->with('success', 'User successfully deleted!');
+    }
 }

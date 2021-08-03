@@ -172,6 +172,7 @@
                       </div><br>
                       <div class="form-row">
                         <div class="form-group col-md-6">
+                          <label>Salutation</label>
                           <select id="salutation" type="text" class="form-control @error('salutation') is-invalid @enderror" name="salutation" value="{{ old('salutation') }}" required autocomplete="salutation" autofocus>
                               <option>Mr.</option>
                               <option>Mrs.</option>
@@ -211,10 +212,13 @@
                       </span>
                        @enderror
                         </div>
+                      </div><br>
+                      <div class="form-row">
                         <div class="form-group col-md-6">
+                          <label>Usertype</label>
                           <select id="usertype" type="text" class="form-control @error('usertype') is-invalid @enderror" name="usertype" value="{{ old('usertype') }}" required autocomplete="usertype" autofocus>
-                              <option>Admin</option>
                               <option>User</option>
+                              <option>Admin</option>
                             </select>
                           @error('salutation')
                               <span class="invalid-feedback" role="alert">
@@ -224,16 +228,16 @@
                       </div>
                         <div class="form-group col-md-6">
                           <label>Confirm Password</label>
-                      <input type="password" class="form-control @error('confirm_password') is-invalid @enderror" name="confirm_password" placeholder="Confirm Password">
-                      @error('confirm_password')
+                      <input type="password" class="form-control @error('password_confirmation') is-invalid @enderror" name="password_confirmation" placeholder="Confirm Password">
+                      @error('password_confirmation')
                       <span class="invalid-feedback" role="alert">
                           <strong>{{ $message }}</strong>
                       </span>
                        @enderror
                         </div>
-                      </div>
-                      <button type="submit" class="btn btn-success">ADD</button>
-                      <a href="/role-register" class="btn btn-danger">CANCEL</a>
+                      </div><br>
+                      <button type="submit" class="btn btn-success">ADD USER</button>
+                      <a href="/admin_users" class="btn btn-danger">CANCEL</a>
                     </form>
               </div>
             </div>

@@ -14,7 +14,7 @@
   <link rel="icon" type="image/png" href="../assets/img/favicon.png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
-    Admin | Student Information
+    Admin | Users
   </title>
 
   <!-- CSS Files -->
@@ -141,11 +141,58 @@
      <div class="content">
         <div class="row">
           <div class="col-md-12">
-           <div class="card">
+            <div class="card">
               <div class="card-header">
+                <h4 class="card-title">All Students</h4><a href="{!! url('/new_student'); !!}" class="btn btn-info">Add Student</a>
               </div>
               <div class="card-body">
-                
+                <div class="table-responsive">
+                  <table class="table table-striped">
+                    <thead class=" text-secondary">
+                      <th>
+                        First Name
+                      </th>
+                      <th>
+                        Last Name
+                      </th>
+                      <th>
+                        Year Group
+                      </th>
+                      <th>
+                        Parent Name
+                      </th>
+                    </thead>
+                    <tbody>
+                      @foreach($student as $students)                    
+                      <tr>
+                        <td>
+                          {{$students->fname}}
+                        </td>
+                        <td>
+                          {{$students->lname}}
+                        </td>
+                        <td>
+                          {{$students->a_grade}}
+                        </td>
+                        <td>
+                          {{$students->parent}}
+                        </td>
+                        <td class="text-right">
+                        <a href="/student-edit/{{ $students->id }}" class="btn btn-success">Edit</a>
+                        </td>
+                        <td class="text-right">
+                          <form action="/student-delete/{{ $students->id }}" method="POST">
+                            @csrf
+                            {{method_field('delete')}}
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                          </form>
+                        </td>
+                      </tr>
+                      @endforeach
+                    </tbody>
+                  </table>
+                  {{$student->links()}}
+                </div>
               </div>
             </div>
           </div> 

@@ -19,7 +19,6 @@ Route::group(['middleware' => ['auth', 'admin']], function() {
 Route::get('/admin_dashboard', [App\Http\Controllers\AdminController::class, 'admin_dashboard']);
 Route::get('/admin_workplace', [App\Http\Controllers\AdminController::class, 'admin_workplace']);
 Route::get('/admin_teaching', [App\Http\Controllers\AdminController::class, 'admin_teaching']);
-Route::get('/admin_students', [App\Http\Controllers\AdminController::class, 'admin_students']);
 Route::get('/admin_configs', [App\Http\Controllers\AdminController::class, 'admin_configs']);
 Route::get('/admin_attendance', [App\Http\Controllers\AdminController::class, 'admin_attendance']);
 Route::get('/admin_academics', [App\Http\Controllers\AdminController::class, 'admin_academics']);
@@ -32,6 +31,8 @@ Route::put('/add-user',[App\Http\Controllers\AdminController::class, 'addUser'])
 Route::get('/adminU-edit/{id}',[App\Http\Controllers\AdminController::class, 'getUser']);
 Route::put('/adminU-Update/{id}',[App\Http\Controllers\AdminController::class, 'UpdateUser']);
 Route::delete('/user-delete/{id}',[App\Http\Controllers\AdminController::class, 'deleteUser']);
+Route::get('/admin_students',[App\Http\Controllers\StudentsController::class, 'students']);
+Route::get('/new_student',[App\Http\Controllers\StudentsController::class, 'new_student']);
 });
 
 Route::get('/', [App\Http\Controllers\PagesController::class, 'index']);

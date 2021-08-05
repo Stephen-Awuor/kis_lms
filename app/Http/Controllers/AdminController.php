@@ -20,9 +20,7 @@ class AdminController extends Controller
     public function admin_teaching(){
         return view ('admin.admin_teaching');
     }
-    public function admin_students(){
-        return view ('admin.admin_students');
-    }
+    
     public function admin_configs(){
         return view ('admin.admin_configs');
     }

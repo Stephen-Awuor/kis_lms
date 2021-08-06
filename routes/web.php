@@ -33,6 +33,10 @@ Route::put('/adminU-Update/{id}',[App\Http\Controllers\AdminController::class, '
 Route::delete('/user-delete/{id}',[App\Http\Controllers\AdminController::class, 'deleteUser']);
 Route::get('/admin_students',[App\Http\Controllers\StudentsController::class, 'students']);
 Route::get('/new_student',[App\Http\Controllers\StudentsController::class, 'new_student']);
+Route::put('/add_student',[App\Http\Controllers\StudentsController::class, 'add_student']);
+Route::get('/student-edit/{id}',[App\Http\Controllers\StudentsController::class, 'getStudent']);
+Route::put('/update_student/{id}',[App\Http\Controllers\StudentsController::class, 'UpdateStudent']);
+Route::delete('/student-delete/{id}',[App\Http\Controllers\StudentsController::class, 'deleteStudent']);
 });
 
 Route::get('/', [App\Http\Controllers\PagesController::class, 'index']);

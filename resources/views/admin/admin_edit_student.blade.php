@@ -143,10 +143,10 @@
           <div class="col-md-12">
           <div class="card">
               <div class="card-header">
-                <h4 class="card-title">Student Details</h4>
+                <h4 class="card-title">Edit Student Details</h4>
               </div>
               <div class="card-body">
-                <form action="/add_student" method="POST">
+                <form action="/update_student/{{$student->id}}" method="POST">
                   @csrf
                   {{method_field('PUT')}}
                 <div class="container-fluid">
@@ -200,7 +200,7 @@
                       </div>
                         <div class="form-group col-md-6">
                           <label>First Name</label>
-                      <input type="text" class="form-control @error('fname') is-invalid @enderror" name="fname" placeholder="Enter First Name">
+                      <input type="text" class="form-control @error('fname') is-invalid @enderror" name="fname" value="{{$student->fname}}">
                       @error('fname')
                       <span class="invalid-feedback" role="alert">
                           <strong>{{ $message }}</strong>
@@ -211,7 +211,7 @@
                       <div class="form-row">
                         <div class="form-group col-md-6">
                           <label>Middle Name</label>
-                      <input type="text" class="form-control @error('mname') is-invalid @enderror" name="mname" placeholder="Enter Middle Name">
+                      <input type="text" class="form-control @error('mname') is-invalid @enderror" name="mname" value="{{$student->mname}}">
                       @error('mname')
                       <span class="invalid-feedback" role="alert">
                           <strong>{{ $message }}</strong>
@@ -220,7 +220,7 @@
                         </div>
                         <div class="form-group col-md-6">
                           <label>Last Name</label>
-                      <input type="text" class="form-control @error('lname') is-invalid @enderror" name="lname" placeholder="Enter Last Name">
+                      <input type="text" class="form-control @error('lname') is-invalid @enderror" name="lname" value="{{$student->lname}}">
                       @error('lname')
                       <span class="invalid-feedback" role="alert">
                           <strong>{{ $message }}</strong>
@@ -254,7 +254,7 @@
                       <div class="form-row">
                         <div class="form-group col-md-6">
                             <label>Previous School</label>
-                        <input type="text" class="form-control @error('c_school') is-invalid @enderror" name="c_school" placeholder="Enter Previous School">
+                        <input type="text" class="form-control @error('c_school') is-invalid @enderror" name="c_school" value="{{$student->c_school}}">
                         @error('c_school')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -263,7 +263,7 @@
                           </div>
                           <div class="form-group col-md-6">
                             <label>Student Parent</label>
-                        <input type="text" class="form-control @error('parent') is-invalid @enderror" name="parent" placeholder="Enter Parent Firts and Last Name">
+                        <input type="text" class="form-control @error('parent') is-invalid @enderror" name="parent" value="{{$student->parent}}">
                         @error('parent')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -286,7 +286,7 @@
                             @enderror
                         </div>
                       </div><br>
-                      <button type="submit" class="btn btn-success">Add</button>
+                      <button type="submit" class="btn btn-success">Save Changes</button>
                       <a href="/admin_students" class="btn btn-danger">Cancel</a>
                     </form>
               </div>

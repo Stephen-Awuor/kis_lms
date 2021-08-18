@@ -65,7 +65,7 @@ class AdminController extends Controller
     }
 
     public function users(){
-        $users = User::OrderBy('created_at', 'asc')->paginate(5); //fetches all users
+        $users = User::OrderBy('created_at', 'asc')->paginate(15); //fetches all users
         return view('admin.admin_users')->with('users', $users);
     }
 

@@ -31,17 +31,20 @@ Route::put('/add-user',[App\Http\Controllers\AdminController::class, 'addUser'])
 Route::get('/adminU-edit/{id}',[App\Http\Controllers\AdminController::class, 'getUser']);
 Route::put('/adminU-Update/{id}',[App\Http\Controllers\AdminController::class, 'UpdateUser']);
 Route::delete('/user-delete/{id}',[App\Http\Controllers\AdminController::class, 'deleteUser']);
+
 Route::get('/admin_students',[App\Http\Controllers\StudentsController::class, 'students']);
 Route::get('/new_student',[App\Http\Controllers\StudentsController::class, 'new_student']);
 Route::put('/add_student',[App\Http\Controllers\StudentsController::class, 'add_student']);
 Route::get('/student-edit/{id}',[App\Http\Controllers\StudentsController::class, 'getStudent']);
 Route::put('/update_student/{id}',[App\Http\Controllers\StudentsController::class, 'UpdateStudent']);
 Route::delete('/student-delete/{id}',[App\Http\Controllers\StudentsController::class, 'deleteStudent']);
+
+Route::get('/admin_parents',[App\Http\Controllers\ParentsController::class, 'parents']);
 });
 
 Route::get('/', [App\Http\Controllers\PagesController::class, 'index']);
 Auth::routes();
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'home']);
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'home'])->name('home');
 Route::get('/workplace', [App\Http\Controllers\HomeController::class, 'workplace']);
 Route::get('/teaching', [App\Http\Controllers\HomeController::class, 'teaching']);
 Route::get('/behaviour', [App\Http\Controllers\HomeController::class, 'behaviour']);

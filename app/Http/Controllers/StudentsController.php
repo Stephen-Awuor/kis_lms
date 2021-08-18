@@ -85,7 +85,5 @@ class StudentsController extends Controller
         $student=Students::FindorFail($id);
         $student->delete();
         return redirect('/admin_students')->with('success', 'Student successfully deleted!');
-    }
-
-
+    } 
 }

@@ -104,7 +104,15 @@
           <div class="collapse navbar-collapse justify-content-end" id="navigation">
            
            <ul class="navbar-nav">
-  
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="./admin_students">Students</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="./admin_parents">Parents</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/new_student">Add Student</a>
+            </li>
               <li class="nav-item dropdown">
                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                     {{ Auth::user()->fname }} <span class="caret"></span>
@@ -124,7 +132,7 @@
             </li>
             
               <li class="nav-item">
-                <a class="nav-link" href="#pablo">
+                <a class="nav-link" href="#">
                   <i class="now-ui-icons users_single-02"></i>
                   <p>
                     <span class="d-lg-none d-md-block">Account</span>
@@ -142,24 +150,26 @@
         <div class="row">
           <div class="col-md-12">
             <div class="card">
-              <div class="card-header">
-                <h4 class="card-title">All Students</h4><a href="{!! url('/new_student'); !!}" class="btn btn-info">Add Student</a>
+              <div class="card-header">   
               </div>
               <div class="card-body">
                 <div class="table-responsive">
                   <table class="table table-striped">
-                    <thead class=" text-secondary">
+                    <thead class=" text-success">
                       <th>
-                        First Name
+                       FIRST NAME
                       </th>
                       <th>
-                        Last Name
+                        LAST NAME
                       </th>
                       <th>
-                        Year Group
+                        YEAR GROUP
                       </th>
                       <th>
-                        Parent Name
+                        PARENT NAME
+                      </th>
+                      <th>
+                        ADMISSION DATE
                       </th>
                     </thead>
                     <tbody>
@@ -176,6 +186,9 @@
                         </td>
                         <td>
                           {{$students->parent}}
+                        </td>
+                        <td>
+                          {{$students->a_date}}
                         </td>
                         <td class="text-right">
                         <a href="/student-edit/{{ $students->id }}" class="btn btn-success">Edit</a>

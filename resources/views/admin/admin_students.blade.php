@@ -113,6 +113,9 @@
             <li class="nav-item">
               <a class="nav-link" href="/new_student">Add Student</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/new_parent">Add Parent</a>
+            </li>
               <li class="nav-item dropdown">
                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                     {{ Auth::user()->fname }} <span class="caret"></span>
@@ -157,24 +160,27 @@
                   <table class="table table-striped">
                     <thead class=" text-success">
                       <th>
-                       FIRST NAME
+                        Student ID
+                       </th>
+                      <th>
+                       First Name
                       </th>
                       <th>
-                        LAST NAME
+                        Last Name
                       </th>
                       <th>
-                        YEAR GROUP
+                        Year Group
                       </th>
                       <th>
-                        PARENT NAME
-                      </th>
-                      <th>
-                        ADMISSION DATE
+                        Parent Name
                       </th>
                     </thead>
                     <tbody>
                       @foreach($student as $students)                    
                       <tr>
+                        <td>
+                          {{$students->id}}
+                        </td>
                         <td>
                           {{$students->fname}}
                         </td>
@@ -186,9 +192,6 @@
                         </td>
                         <td>
                           {{$students->parent}}
-                        </td>
-                        <td>
-                          {{$students->a_date}}
                         </td>
                         <td class="text-right">
                         <a href="/student-edit/{{ $students->id }}" class="btn btn-success">Edit</a>

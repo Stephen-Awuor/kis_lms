@@ -11,6 +11,18 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', function () {
+    return view('auth.login');
+});
+Auth::routes();
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'home'])->name('home');
+Route::get('/workplace', [App\Http\Controllers\HomeController::class, 'workplace']);
+Route::get('/teaching', [App\Http\Controllers\HomeController::class, 'teaching']);
+Route::get('/behaviour', [App\Http\Controllers\HomeController::class, 'behaviour']);
+Route::get('/reports', [App\Http\Controllers\HomeController::class, 'reports']);
+Route::get('/profile/{id}', [App\Http\Controllers\UserController::class, 'getProfile']);
+Route::put('/updateProfile/{id}', [App\Http\Controllers\UserController::class, 'ProfileUpdate']);
+
 Route::group(['middleware' => ['auth', 'admin']], function() {
     Route::get('admin_dashboard', function() {
         return view('admin.admin_dashboard');
@@ -40,14 +52,10 @@ Route::put('/update_student/{id}',[App\Http\Controllers\StudentsController::clas
 Route::delete('/student-delete/{id}',[App\Http\Controllers\StudentsController::class, 'deleteStudent']);
 
 Route::get('/admin_parents',[App\Http\Controllers\ParentsController::class, 'parents']);
+Route::get('/new_parent',[App\Http\Controllers\ParentsController::class, 'new_parent']);
+Route::put('/add_parent',[App\Http\Controllers\ParentsController::class, 'add_parent']);
+Route::get('/edit_parent/{id}',[App\Http\Controllers\ParentsController::class, 'getParent']);
+Route::put('/update_parent/{id}',[App\Http\Controllers\ParentsController::class, 'UpdateParent']);
+Route::delete('/delete_parent/{id}',[App\Http\Controllers\StudentsController::class, 'deleteParent']);
 });
 
-Route::get('/', [App\Http\Controllers\PagesController::class, 'index']);
-Auth::routes();
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'home'])->name('home');
-Route::get('/workplace', [App\Http\Controllers\HomeController::class, 'workplace']);
-Route::get('/teaching', [App\Http\Controllers\HomeController::class, 'teaching']);
-Route::get('/behaviour', [App\Http\Controllers\HomeController::class, 'behaviour']);
-Route::get('/reports', [App\Http\Controllers\HomeController::class, 'reports']);
-Route::get('/profile/{id}', [App\Http\Controllers\UserController::class, 'getProfile']);
-Route::put('/updateProfile/{id}', [App\Http\Controllers\UserController::class, 'ProfileUpdate']);

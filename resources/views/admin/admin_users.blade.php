@@ -143,12 +143,15 @@
           <div class="col-md-12">
             <div class="card">
               <div class="card-header">
-                <h4 class="card-title">Staff List</h4><a href="{!! url('/new_user'); !!}" class="btn btn-info">New User</a>
+                <h4 class="card-title">Staff List</h4><a href="{!! url('/new_user'); !!}" class="btn btn-info">New Staff</a>
               </div>
               <div class="card-body">
                 <div class="table-responsive">
                   <table class="table table-striped">
                     <thead class=" text-secondary">
+                      <th>
+                        Staff ID
+                      </th>
                       <th>
                         First Name
                       </th>
@@ -165,6 +168,9 @@
                     <tbody>
                       @foreach($users as $user)                    
                       <tr>
+                        <td>
+                          {{$user->id}}
+                        </td>
                         <td>
                           {{$user->fname}}
                         </td>

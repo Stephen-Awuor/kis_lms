@@ -57,5 +57,10 @@ Route::put('/add_parent',[App\Http\Controllers\ParentsController::class, 'add_pa
 Route::get('/edit_parent/{id}',[App\Http\Controllers\ParentsController::class, 'getParent']);
 Route::put('/update_parent/{id}',[App\Http\Controllers\ParentsController::class, 'UpdateParent']);
 Route::delete('/delete_parent/{id}',[App\Http\Controllers\StudentsController::class, 'deleteParent']);
+
+Route::get('/terms',[App\Http\Controllers\AcademicsController::class, 'terms']);
+Route::get('/catalogs',[App\Http\Controllers\AcademicsController::class, 'catalogs']);
+Route::get('/courses',[App\Http\Controllers\AcademicsController::class, 'courses']);
+Route::get('/sections',[App\Http\Controllers\AcademicsController::class, 'sections']);
 });
 

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Students;
 use App\Models\User;
+use App\Helpers\Helper;
+use Validator;
 
 class StudentsController extends Controller
 {
@@ -42,7 +44,9 @@ class StudentsController extends Controller
             'a_grade.required' => "The :value Admission Grade is required.",
         ]);
         
+         $generator = Helper::IDGenerator(new Students, 'Student_id', 5, 'STD');
          $newstudent=new Students();
+         $newstudent->Student_id->$generator;
          $newstudent->a_date=$request->input('a_date');
          $newstudent->a_year=$request->input('a_year');
          $newstudent->a_grade=$request->input('a_grade');

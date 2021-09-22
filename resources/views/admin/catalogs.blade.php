@@ -14,7 +14,7 @@
   <link rel="icon" type="image/png" href="../assets/img/favicon.png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
-    Admin | Users
+    Admin | Academics
   </title>
 
   <!-- CSS Files -->
@@ -105,11 +105,30 @@
            
            <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="./admin_users">Staff List</a>
+              <a class="nav-link active" aria-current="page" href="./terms">Academic Terms</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="./new_user">Add Staff</a>
+              <a class="nav-link active" aria-current="page" href="./catalogs">Course Catalog</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="./courses">Courses</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/sections">Course Sections</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="">Final Grades</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="">Grade Group Definitions</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="">Grade Breakdown</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="">Assignment templates</a>
+            </li>
+  
               <li class="nav-item dropdown">
                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                     {{ Auth::user()->fname }} <span class="caret"></span>
@@ -146,64 +165,11 @@
      <div class="content">
         <div class="row">
           <div class="col-md-12">
-            <div class="card">
+           <div class="card">
               <div class="card-header">
-                
               </div>
               <div class="card-body">
-                <div class="table-responsive">
-                  <table class="table table-striped">
-                    <thead class="text-success">
-                      <th>
-                        Staff ID
-                      </th>
-                      <th>
-                        First Name
-                      </th>
-                      <th>
-                        Last Name
-                      </th>
-                      <th>
-                        Email Address
-                      </th>
-                      <th>
-                       User role
-                      </th>
-                    </thead>
-                    <tbody>
-                      @foreach($users as $user)                    
-                      <tr>
-                        <td>
-                          {{$user->id}}
-                        </td>
-                        <td>
-                          {{$user->fname}}
-                        </td>
-                        <td>
-                          {{$user->lname}}
-                        </td>
-                        <td>
-                          {{$user->email}}
-                        </td>
-                        <td>
-                          {{$user->usertype}}
-                        </td>
-                        <td class="text-right">
-                        <a href="/adminU-edit/{{ $user->id }}" class="btn btn-success">Edit</a>
-                        </td>
-                        <td class="text-right">
-                          <form action="/user-delete/{{ $user->id }}" method="POST">
-                            @csrf
-                            {{method_field('delete')}}
-                        <button type="submit" class="btn btn-danger">Delete</button>
-                          </form>
-                        </td>
-                      </tr>
-                      @endforeach
-                    </tbody>
-                  </table>
-                  {{$users->links()}}
-                </div>
+                
               </div>
             </div>
           </div> 

@@ -1,0 +1,33 @@
+public function add_student(request $request){
+       
+        
+        $a_date=$request->a_date;
+        $a_year=$request->a_year;
+        $a_grade=$request->a_grade;
+        $fname=$request->fname;
+        $mname=$request->mname;
+        $lname=$request->lname;
+        $gender=$request->gender;
+        $dob=$request->dob;
+        $c_school=$request->c_school;
+        $parent=$request->parent;
+        $p_relation=$request->p_relation;
+       
+
+         $generator = Helper::IDGenerator(new Students, 'Student_id', 5, 'STD');
+         $newstudent=new Students();
+         $newstudent->Student_id->$generator;
+         $newstudent->a_date->$request;
+         $newstudent->a_year->$request;
+         $newstudent->a_grade->$request;
+         $newstudent->fname->request;
+         $newstudent->mname->$request;
+         $newstudent->lname->$request;
+         $newstudent->gender->$request;
+         $newstudent->dob->$request;
+         $newstudent->c_school->$request;
+         $newstudent->parent->$request;
+         $newstudent->p_relation->$request;
+         $newstudent->save(); 
+         return redirect ('/admin_students')->with('success', 'New Student Successfully Added!');
+    }

@@ -10,7 +10,7 @@ class AcademicsController extends Controller
     {
         $this->middleware('auth');
     }
-    public function terms(){
+    public function term(){
         return view ('admin.term');
     }
     public function catalogs(){
@@ -21,5 +21,17 @@ class AcademicsController extends Controller
     }
     public function sections(){
         return view ('admin.sections');
+    }
+    public function grades(){
+        return view ('admin.grades');
+    }
+    public function grade_breakdown(){
+        return view ('admin.grade_breakdown');
+    }
+    public function templates(){
+        return view ('admin.templates');
+    }
+    public function grade_groups(){
+        return view ('admin.grade_groups');
     }
 }

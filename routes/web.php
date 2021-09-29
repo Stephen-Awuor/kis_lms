@@ -58,9 +58,13 @@ Route::get('/edit_parent/{id}',[App\Http\Controllers\ParentsController::class, '
 Route::put('/update_parent/{id}',[App\Http\Controllers\ParentsController::class, 'UpdateParent']);
 Route::delete('/delete_parent/{id}',[App\Http\Controllers\StudentsController::class, 'deleteParent']);
 
-Route::get('/terms',[App\Http\Controllers\AcademicsController::class, 'terms']);
+Route::get('/term',[App\Http\Controllers\AcademicsController::class, 'term']);
 Route::get('/catalogs',[App\Http\Controllers\AcademicsController::class, 'catalogs']);
 Route::get('/courses',[App\Http\Controllers\AcademicsController::class, 'courses']);
 Route::get('/sections',[App\Http\Controllers\AcademicsController::class, 'sections']);
+Route::get('/grades',[App\Http\Controllers\AcademicsController::class, 'grades']);
+Route::get('/grade_breakdown',[App\Http\Controllers\AcademicsController::class, 'grade_breakdown']);
+Route::get('/grade_groups',[App\Http\Controllers\AcademicsController::class, 'grade_groups']);
+Route::get('/templates',[App\Http\Controllers\AcademicsController::class, 'templates']);
 });
 

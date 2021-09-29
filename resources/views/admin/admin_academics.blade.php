@@ -105,28 +105,28 @@
            
            <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="./terms">Academic Terms</a>
+              <a class="nav-link active" aria-current="page" href="./term">Academic Terms</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="">Course Catalog</a>
+              <a class="nav-link active" aria-current="page" href="./catalogs">Course Catalog</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="">Courses</a>
+              <a class="nav-link active" aria-current="page" href="./courses">Courses</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="">Course Sections</a>
+              <a class="nav-link active" aria-current="page" href="./sections">Course Sections</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="">Final Grades</a>
+              <a class="nav-link active" aria-current="page" href="./grades">Final Grades</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="">Grade Group Definitions</a>
+              <a class="nav-link active" aria-current="page" href="./grade_groups">Grade Group Definitions</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="">Grade Breakdown</a>
+              <a class="nav-link active" aria-current="page" href="./grade_breakdown">Grade Breakdown</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="">Assignment templates</a>
+              <a class="nav-link active" aria-current="page" href="./templates">Assignment templates</a>
             </li>
   
               <li class="nav-item dropdown">

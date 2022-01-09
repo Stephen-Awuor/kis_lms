@@ -153,7 +153,7 @@
               <div class="card-body">
                 <div class="table-responsive">
                   <table class="table table-striped">
-                    <thead class="text-success">
+                    <thead class="text-secondary">
                       <th>
                         Staff ID
                       </th>
@@ -191,6 +191,9 @@
                         <td class="text-right">
                         <a href="/adminU-edit/{{ $user->id }}" class="btn btn-success">Edit</a>
                         </td>
+                        <td class="text-right">
+                          <a href="#" class="btn btn-secondary">Suspend</a>
+                          </td>
                         <td class="text-right">
                           <form action="/user-delete/{{ $user->id }}" method="POST">
                             @csrf

@@ -105,11 +105,13 @@
            
            <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Add New Grading</a>
+              <a class="nav-link active" aria-current="page" href="#">All Classes</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">List All</a>
+              <a class="nav-link active" aria-current="page" href="#">Add Class</a>
             </li>
+           
+  
               <li class="nav-item dropdown">
                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                     {{ Auth::user()->fname }} <span class="caret"></span>
@@ -150,7 +152,24 @@
               <div class="card-header">
               </div>
               <div class="card-body">
-                
+                <form action="/add_class" method="POST">
+                  @csrf
+                  {{method_field('PUT')}}
+                  <div class="form-row">
+                  <div class="form-group col-md-4">
+                    <label for="inputEmail4">Class</label>
+                    <input type="text" class="form-control" id="" name="term1" placeholder="Year 1">
+                  </div><br>
+                  <div class="form-group col-md-4">
+                    <label for="inputPassword4">Code</label>
+                    <input type="text" class="form-control" id="inputPassword4"name="start_1" placeholder="">
+                  </div><br>
+                  <div class="form-group col-md-4">
+                    <label for="inputPassword4">Capacity</label>
+                    <input type="text" class="form-control" id="inputPassword4"name="start_1" placeholder="">
+                  </div><br>
+                  <button type="submit" class="btn btn-primary">Add Class</button>
+                </form>
               </div>
             </div>
           </div> 

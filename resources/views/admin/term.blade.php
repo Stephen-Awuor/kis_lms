@@ -105,28 +105,10 @@
            
            <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="./terms">Academic Terms</a>
+              <a class="nav-link active" aria-current="page" href="./term">Setup Academic Calendar</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="./catalogs">Course Catalog</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="./courses">Courses</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="./sections">Course Sections</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="">Final Grades</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="">Grade Group Definitions</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="">Grade Breakdown</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="">Assignment templates</a>
+              <a class="nav-link active" aria-current="page" href="./view_terms">Academic Terms</a>
             </li>
   
               <li class="nav-item dropdown">
@@ -169,7 +151,54 @@
               <div class="card-header">
               </div>
               <div class="card-body">
-                
+                <form action="/add_terms" method="POST">
+                  @csrf
+                  {{method_field('PUT')}}
+                  <div class="form-row">
+                  <div class="form-group col-md-4">
+                    <label for="inputEmail4">Term</label>
+                    <input type="text" class="form-control" id="" name="term1" placeholder="Term 1">
+                  </div><br>
+                  <div class="form-group col-md-4">
+                    <label for="inputPassword4">Start Date</label>
+                    <input type="datetime-local" class="form-control" id="inputPassword4"name="start_1" placeholder="">
+                  </div><br>
+                  <div class="form-group col-md-4">
+                    <label for="inputPassword4">End Date</label>
+                    <input type="datetime-local" class="form-control" id="inputPassword4" name="end_1" placeholder="">
+                  </div>
+                </div><br>
+                 <div class="form-row">
+                  <div class="form-group col-md-4">
+                    <label for="inputEmail4">Term</label>
+                    <input type="text" class="form-control" id="" name="term2" placeholder="Term 2">
+                  </div><br>
+                  <div class="form-group col-md-4">
+                    <label for="inputPassword4">Start Date</label>
+                    <input type="datetime-local" class="form-control" id="inputPassword4"name="start_2" placeholder="">
+                  </div><br>
+                  <div class="form-group col-md-4">
+                    <label for="inputPassword4">End Date</label>
+                    <input type="datetime-local" class="form-control" id="inputPassword4" name="end_2" placeholder="">
+                  </div>
+                </div><br>
+                 <div class="form-row">
+                  <div class="form-group col-md-4">
+                    <label for="inputEmail4">Term</label>
+                    <input type="text" class="form-control" id="" name="term3" placeholder="Term 3">
+                  </div><br>
+                  <div class="form-group col-md-4">
+                    <label for="inputPassword4">Start Date</label>
+                    <input type="datetime-local" class="form-control" id="inputPassword4"name="start_3" placeholder="">
+                  </div><br>
+                  <div class="form-group col-md-4">
+                    <label for="inputPassword4">End Date</label>
+                    <input type="datetime-local" class="form-control" id="inputPassword4" name="end_3" placeholder="">
+                  </div>
+                </div><br>
+                <button type="submit" class="btn btn-primary">Submit</button>
+                 <button type="submit" class="btn btn-danger">Cancel</button>
+                </form>
               </div>
             </div>
           </div> 

@@ -14,7 +14,7 @@
   <link rel="icon" type="image/png" href="../assets/img/favicon.png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
-    Admin | Academics
+    Admin | Terms
   </title>
 
   <!-- CSS Files -->
@@ -105,30 +105,11 @@
            
            <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="./terms">Academic Terms</a>
+              <a class="nav-link active" aria-current="page" href="./view_terms">All Terms</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="./catalogs">Course Catalog</a>
+              <a class="nav-link active" aria-current="page" href="./terms">Edit Details</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="./courses">Courses</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/sections">Course Sections</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="">Final Grades</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="">Grade Group Definitions</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="">Grade Breakdown</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="">Assignment templates</a>
-            </li>
-  
               <li class="nav-item dropdown">
                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                     {{ Auth::user()->fname }} <span class="caret"></span>
@@ -148,7 +129,7 @@
             </li>
             
               <li class="nav-item">
-                <a class="nav-link" href="#pablo">
+                <a class="nav-link" href="#">
                   <i class="now-ui-icons users_single-02"></i>
                   <p>
                     <span class="d-lg-none d-md-block">Account</span>
@@ -165,11 +146,76 @@
      <div class="content">
         <div class="row">
           <div class="col-md-12">
-           <div class="card">
-              <div class="card-header">
+            <div class="card">
+              <div class="card-header">   
               </div>
               <div class="card-body">
-                
+                <div class="table-responsive">
+                  <table class="table table-striped">
+                    <thead class=" text-secondary">
+                      <th>
+                      Term 1
+                       </th>
+                      <th>
+                      Start Date
+                      </th>
+                      <th>
+                      End Date
+                      </th>
+                      <th>
+                        Term 2
+                      </th>
+                      <th>
+                        Start Date
+                      </th>
+                      <th>
+                        End Date
+                      </th>
+                      <th>
+                        Term 3
+                      </th>
+                      <th>
+                        Start Date
+                      </th>
+                      <th>
+                        End Date
+                      </th>
+                    </thead>
+                    <tbody>
+                      @foreach($term as $terms)                    
+                      <tr>
+                        <td>
+                          {{$terms->term1}}
+                        </td>
+                        <td>
+                          {{$terms->start_1}}
+                        </td>
+                        <td>
+                         {{$terms->end_1}}
+                        </td>
+                        <td>
+                          {{$terms->term2}}
+                        </td>
+                        <td>
+                          {{$terms->start_2}}
+                        </td>
+                        <td>
+                          {{$terms->end_2}}
+                        </td>
+                        <td>
+                          {{$terms->term3}}
+                        </td>
+                        <td>
+                          {{$terms->start_3}}
+                        </td>
+                        <td>
+                          {{$terms->end_3}}
+                        </td>
+                      </tr>
+                      @endforeach
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </div>
           </div> 

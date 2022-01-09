@@ -105,30 +105,14 @@
            
            <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="./terms">Academic Terms</a>
+              <a class="nav-link active" aria-current="page" href="#">Add Subjects</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="./catalogs">Course Catalog</a>
+              <a class="nav-link active" aria-current="page" href="#">All Subjects</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="./courses">Courses</a>
+              <a class="nav-link active" aria-current="page" href="#">Allocation Report</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="./sections">Course Sections</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="">Final Grades</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="">Grade Group Definitions</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="">Grade Breakdown</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="">Assignment templates</a>
-            </li>
-  
               <li class="nav-item dropdown">
                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                     {{ Auth::user()->fname }} <span class="caret"></span>

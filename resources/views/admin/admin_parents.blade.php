@@ -14,7 +14,7 @@
   <link rel="icon" type="image/png" href="../assets/img/favicon.png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
-    Admin | Users
+    Admin | Parents
   </title>
 
   <!-- CSS Files -->
@@ -158,7 +158,7 @@
               <div class="card-body">
                 <div class="table-responsive">
                   <table class="table table-striped">
-                    <thead class=" text-success">
+                    <thead class=" text-secondary">
                       <th>
                         Parent ID
                        </th>
@@ -190,6 +190,9 @@
                         <td class="text-right">
                         <a href="/edit_parent/{{$parents->id}}" class="btn btn-success">Edit</a>
                         </td>
+                        <td class="text-right">
+                          <a href="#" class="btn btn-secondary">Suspend</a>
+                          </td>
                         <td class="text-right">
                           <form action="/delete_parent/{{$parents->id}}" method="POST">
                             @csrf

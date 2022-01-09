@@ -59,7 +59,7 @@
           </li>
           <li class="{{Request::is('admin_students') ? 'active' : ''}}">
             <a href="./admin_students">
-              <i class="now-ui-icons users_single-02"></i>
+              <i class="now-ui-icons users_circle-08"></i>
               <p class="text-info">Student Information</p>
             </a>
           </li>
@@ -71,19 +71,19 @@
           </li>
           <li class="{{Request::is('admin_configs') ? 'active' : ''}}">
             <a href="./admin_configs">
-              <i class="now-ui-icons users_single-02"></i>
+              <i class="now-ui-icons ui-1_settings-gear-63"></i>
               <p class="text-info">Settings</p>
             </a>
           </li>
           <li class="{{Request::is('admin_reports') ? 'active' : ''}}">
             <a href="./admin_reports">
-              <i class="now-ui-icons users_single-02"></i>
+              <i class="now-ui-icons business_chart-bar-32"></i>
               <p class="text-info">Reports</p>
             </a>
           </li>
           <li class="{{Request::is('admin_reports') ? 'active' : ''}}">
             <a href="./admin_profile/{id}">
-              <i class="now-ui-icons users_single-02"></i>
+              <i class="now-ui-icons emoticons_satisfied"></i>
               <p class="text-info">Admin Profile</p>
             </a>
           </li>

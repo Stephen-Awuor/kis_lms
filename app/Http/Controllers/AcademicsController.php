@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\terms;
 
 class AcademicsController extends Controller
 {
@@ -13,8 +14,8 @@ class AcademicsController extends Controller
     public function term(){
         return view ('admin.term');
     }
-    public function catalogs(){
-        return view ('admin.catalogs');
+    public function classes(){
+        return view ('admin.classes');
     }
     public function courses(){
         return view ('admin.courses');
@@ -34,4 +35,37 @@ class AcademicsController extends Controller
     public function grade_groups(){
         return view ('admin.grade_groups');
     }
-}
+    public function terms(){
+        return view ('admin.term');
+    }
+    public function setup_terms(request $request){
+        $this->validate ($request, [
+            'term1' => ['required'],
+            'start_1' => ['required'],
+            'end_1' => ['required'],
+            'term2' => ['required'],
+            'start_2' => ['required'],
+            'end_2' => ['required'],
+            'term3' => ['required'],
+            'start_3' => ['required'],
+            'end_3' => ['required'],
+            
+        ]);
+         $newterm=new terms();
+         $newterm->term1=$request->input('term1');
+         $newterm->start_1=$request->input('start_1');
+         $newterm->end_1=$request->input('end_2');
+         $newterm->term2=$request->input('term2');
+         $newterm->start_2=$request->input('start_2');
+         $newterm->end_2=$request->input('end_2');
+         $newterm->term3=$request->input('term3');
+         $newterm->start_3=$request->input('start_3');
+         $newterm->end_3=$request->input('end_3');
+         $newterm->save(); 
+         return redirect ('/view_terms')->with('success', 'Academic Calendar Successfully Set!');
+    }
+    public function view_terms(){
+            $term = terms::OrderBy('created_at', 'asc')->paginate(10); //fetches the terms from db
+            return view('admin.view_terms')->with('term', $term);
+        }
+    }

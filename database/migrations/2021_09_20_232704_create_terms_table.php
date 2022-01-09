@@ -15,12 +15,15 @@ class CreateTermsTable extends Migration
     {
         Schema::create('terms', function (Blueprint $table) {
             $table->id();
-            $table->string('year');
-            $table->string('semester');
-            $table->string('s_date');
-            $table->string('e_date');
-            $table->string('periods');
-            $table->mediumText('description');
+            $table->string('term1');
+            $table->string('start_1');
+            $table->string('end_1');
+            $table->string('term2');
+            $table->string('start_2');
+            $table->string('end_2');
+            $table->string('term3');
+            $table->string('start_3');
+            $table->string('end_3');
             $table->timestamps();
         });
     }

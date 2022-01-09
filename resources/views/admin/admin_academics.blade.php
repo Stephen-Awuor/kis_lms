@@ -105,25 +105,25 @@
            
            <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="./term">Academic Terms</a>
+              <a class="nav-link active" aria-current="page" href="./view_terms">Academic Terms</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="./catalogs">Course Catalog</a>
+              <a class="nav-link active" aria-current="page" href="./classes">Classes</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="./courses">Courses</a>
+              <a class="nav-link active" aria-current="page" href="./courses">Subjects</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="./sections">Course Sections</a>
+              <a class="nav-link active" aria-current="page" href="./sections">Subject Allocations</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="./grades">Final Grades</a>
+              <a class="nav-link active" aria-current="page" href="./grades">Grades</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="./grade_groups">Grade Group Definitions</a>
+              <a class="nav-link active" aria-current="page" href="./grade_groups">Grading</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="./grade_breakdown">Grade Breakdown</a>
+              <a class="nav-link active" aria-current="page" href="./grade_breakdown">Grading System</a>
             </li>
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="./templates">Assignment templates</a>

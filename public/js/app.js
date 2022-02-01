@@ -1882,6 +1882,19 @@ __webpack_require__.r(__webpack_exports__);
  */
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+$('.addRow').on('click', function () {
+  addRow();
+});
+
+function addRow() {
+  var tr = '<tr>' + '<td> <input type="text" class="form-control" name="class[]"></td>' + '<td> <input type="text" class="form-control" name="code[]"></td>' + '<td> <input type="text" class="form-control" name="capacity[]"></td>' + '<td><a href = "#" class="btn btn-danger remove">-</a></td>' + '</tr>';
+  $('tbody').append(tr);
+}
+
+;
+$('tbody').on('click', '.remove', function () {
+  $(this).parent().parent().remove();
+});
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js").default;
 /**
  * The following block of code may be used to automatically register your

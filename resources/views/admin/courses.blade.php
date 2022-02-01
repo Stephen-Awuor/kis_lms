@@ -14,7 +14,7 @@
   <link rel="icon" type="image/png" href="../assets/img/favicon.png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
-    Admin | Academics
+    Admin | Subjects
   </title>
 
   <!-- CSS Files -->
@@ -153,24 +153,69 @@
               <div class="card-header">
               </div>
               <div class="card-body">
-                
-              </div>
-            </div>
-          </div> 
-        </div>
-      </div>
-    </div>
-  </div>
-  {{--<script src="../assets/js/core/jquery.min.js"></script>
-  <script src="../assets/js/core/popper.min.js"></script>
-  <script src="../assets/js/core/bootstrap.min.js"></script>
-  <script src="../assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>--}}
-  <!--  Google Maps Plugin    -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
-  <!-- Chart JS -->
-  <script src="../assets/js/plugins/chartjs.min.js"></script>
-  <!--  Notifications Plugin    -->
-  <script src="../assets/js/plugins/bootstrap-notify.js"></script>
-</body>
-</html>
-@endsection
+                <div class="row">
+                  <div class="col-md-12 col-sm-12">
+                   <form action="/add_classes" method="POST">
+                     @csrf
+                     {{method_field('PUT')}}
+                    <div clas="form group-row">
+                    <table class="table table-bordered">
+                      <thead>
+                        <tr>
+                           <th>Subject</th>
+                           <th>Code</th>
+                           <th>Category</th>
+                           <th><a href = "#" class="btn btn-info addRow">+</a></th>
+                         <tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td> <input type="text" class="form-control" name="subject[]" required=""></td>
+                          <td> <input type="text" class="form-control" name="code[]" required=""></td>
+                          <td> <input type="text" class="form-control" name="category[]" required=""></td>
+                          <td><a href = "#" class="btn btn-danger remove">-</a></td>
+                        </tr>
+                      </tbody>
+                     </table>
+                   </div>
+                   <button type="submit" class="btn btn-primary">Submit</button>
+                 </form>
+                </div>
+               </div>
+             </div>
+           </div> 
+         </div>
+       </div>
+     </div>
+   </div>
+ <script>
+   $('.addRow').on('click', function(){
+     addRow();
+   });
+   function addRow(){
+     var tr = '<tr>'+
+                          '<td> <input type="text" class="form-control" name="class[]"></td>'+
+                          '<td> <input type="text" class="form-control" name="code[]"></td>'+
+                          '<td> <input type="text" class="form-control" name="capacity[]"></td>'+
+                          '<td><a href = "#" class="btn btn-danger remove">-</a></td>'+
+                '</tr>';
+                $('tbody').append(tr);
+   };
+   $('tbody').on('click', '.remove', function(){
+     $(this).parent().parent().remove();
+   });
+   </script>
+   {{--<script src="../assets/js/core/jquery.min.js"></script>
+   <script src="../assets/js/core/popper.min.js"></script>
+   <script src="../assets/js/core/bootstrap.min.js"></script>
+   <script src="../assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>--}}
+   <!--  Google Maps Plugin    -->
+   <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+   <!-- Chart JS -->
+   <script src="../assets/js/plugins/chartjs.min.js"></script>
+   <!--  Notifications Plugin    -->
+   <script src="../assets/js/plugins/bootstrap-notify.js"></script>
+ </body>
+ </html>
+ @endsection
+ 

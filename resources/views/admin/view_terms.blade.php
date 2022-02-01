@@ -150,72 +150,34 @@
               <div class="card-header">   
               </div>
               <div class="card-body">
-                <div class="table-responsive">
-                  <table class="table table-striped">
-                    <thead class=" text-secondary">
-                      <th>
-                      Term 1
-                       </th>
-                      <th>
-                      Start Date
-                      </th>
-                      <th>
-                      End Date
-                      </th>
-                      <th>
-                        Term 2
-                      </th>
-                      <th>
-                        Start Date
-                      </th>
-                      <th>
-                        End Date
-                      </th>
-                      <th>
-                        Term 3
-                      </th>
-                      <th>
-                        Start Date
-                      </th>
-                      <th>
-                        End Date
-                      </th>
-                    </thead>
-                    <tbody>
-                      @foreach($term as $terms)                    
-                      <tr>
-                        <td>
-                          {{$terms->term1}}
-                        </td>
-                        <td>
-                          {{$terms->start_1}}
-                        </td>
-                        <td>
-                         {{$terms->end_1}}
-                        </td>
-                        <td>
-                          {{$terms->term2}}
-                        </td>
-                        <td>
-                          {{$terms->start_2}}
-                        </td>
-                        <td>
-                          {{$terms->end_2}}
-                        </td>
-                        <td>
-                          {{$terms->term3}}
-                        </td>
-                        <td>
-                          {{$terms->start_3}}
-                        </td>
-                        <td>
-                          {{$terms->end_3}}
-                        </td>
-                      </tr>
-                      @endforeach
-                    </tbody>
-                  </table>
-                </div>
+                <table class="table table-striped">
+                  <thead class="thead-dark">
+                    <tr>
+                      <th scope="col">Term</th>
+                      <th scope="col">Start Date</th>
+                      <th scope="col">End Date</th>
+                    </tr>
+                  </thead>
+                  @foreach($term as $terms) 
+                  <tbody>
+                    <tr>
+                      <td> {{$terms->term1}}</td>
+                      <td> {{$terms->start_1}}</td>
+                      <td> {{$terms->end_1}}</td>
+                    </tr>
+                    <tr>
+                      <td> {{$terms->term2}}</td>
+                      <td> {{$terms->start_2}}</td>
+                      <td> {{$terms->end_2}}</td>
+                    </tr>
+                    <tr>
+                      <td> {{$terms->term3}}</td>
+                      <td> {{$terms->start_3}}</td>
+                      <td> {{$terms->end_3}}</td>
+                    </tr>
+                    @endforeach
+                  </tbody>
+                </table>
               </div>
             </div>
           </div> 

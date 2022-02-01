@@ -69,5 +69,6 @@ Route::get('/templates',[App\Http\Controllers\AcademicsController::class, 'templ
 Route::get('/terms',[App\Http\Controllers\AcademicsController::class, 'terms']);
 Route::put('/add_terms',[App\Http\Controllers\AcademicsController::class, 'setup_terms']);
 Route::get('/view_terms',[App\Http\Controllers\AcademicsController::class, 'view_terms']);
+Route::put('/add_classes',[App\Http\Controllers\AcademicsController::class, 'add_classes']);
 });
 

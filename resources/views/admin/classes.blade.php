@@ -152,24 +152,34 @@
               <div class="card-header">
               </div>
               <div class="card-body">
-                <form action="/add_class" method="POST">
-                  @csrf
-                  {{method_field('PUT')}}
-                  <div class="form-row">
-                  <div class="form-group col-md-4">
-                    <label for="inputEmail4">Class</label>
-                    <input type="text" class="form-control" id="" name="term1" placeholder="Year 1">
-                  </div><br>
-                  <div class="form-group col-md-4">
-                    <label for="inputPassword4">Code</label>
-                    <input type="text" class="form-control" id="inputPassword4"name="start_1" placeholder="">
-                  </div><br>
-                  <div class="form-group col-md-4">
-                    <label for="inputPassword4">Capacity</label>
-                    <input type="text" class="form-control" id="inputPassword4"name="start_1" placeholder="">
-                  </div><br>
-                  <button type="submit" class="btn btn-primary">Add Class</button>
+               <div class="row">
+                 <div class="col-md-12 col-sm-12">
+                  <form action="/add_classes" method="POST">
+                    @csrf
+                    {{method_field('PUT')}}
+                   <div clas="form group-row">
+                   <table class="table table-bordered">
+                     <thead>
+                       <tr>
+                          <th>Class</th>
+                          <th>Code</th>
+                          <th>Capacity</th>
+                          <th><a href = "#" class="btn btn-info addRow">+</a></th>
+                        <tr>
+                     </thead>
+                     <tbody>
+                       <tr>
+                         <td> <input type="text" class="form-control" name="class[]"></td>
+                         <td> <input type="text" class="form-control" name="code[]"></td>
+                         <td> <input type="text" class="form-control" name="capacity[]"></td>
+                         <td><a href = "#" class="btn btn-danger remove">-</a></td>
+                       </tr>
+                     </tbody>
+                    </table>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
+               </div>
               </div>
             </div>
           </div> 
@@ -177,6 +187,23 @@
       </div>
     </div>
   </div>
+<script>
+  $('.addRow').on('click', function(){
+    addRow();
+  });
+  function addRow(){
+    var tr = '<tr>'+
+                         '<td> <input type="text" class="form-control" name="class[]"></td>'+
+                         '<td> <input type="text" class="form-control" name="code[]"></td>'+
+                         '<td> <input type="text" class="form-control" name="capacity[]"></td>'+
+                         '<td><a href = "#" class="btn btn-danger remove">-</a></td>'+
+               '</tr>';
+               $('tbody').append(tr);
+  };
+  $('tbody').on('click', '.remove', function(){
+    $(this).parent().parent().remove();
+  });
+  </script>
   {{--<script src="../assets/js/core/jquery.min.js"></script>
   <script src="../assets/js/core/popper.min.js"></script>
   <script src="../assets/js/core/bootstrap.min.js"></script>

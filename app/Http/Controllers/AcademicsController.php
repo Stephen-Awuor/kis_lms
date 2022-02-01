@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\terms;
+use App\Models\classes;
+use DB;
+
 
 class AcademicsController extends Controller
 {
@@ -67,5 +70,22 @@ class AcademicsController extends Controller
     public function view_terms(){
             $term = terms::OrderBy('created_at', 'asc')->paginate(10); //fetches the terms from db
             return view('admin.view_terms')->with('term', $term);
+        }
+        
+    public function add_classes(request $request){
+        //dd($request->());
+            // $class = $request->class;
+            // $code = $request->code;
+            // $capacity = $request->capacity;
+
+            foreach($request->class as $key=>$insert) {
+                $add_classes = [
+                    'class'  => $request->class[$key],
+                    'code'  => $request->code[$key],
+                    'capacity'  => $request->capacity[$key],
+                ];
+            }
+             DB::table('classes') -> insert($add_classes);
+             return redirect ('/classes')->with('success', 'Classes Successfully Set!');
         }
     }
